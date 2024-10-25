@@ -1,6 +1,3 @@
-import Data.List (isInfixOf)
-import System.IO (hFlush, stdout)
-
 main = do
   putStrLn "Welcome to Task Manager 3000"
   taskManager []
@@ -31,7 +28,7 @@ taskManager tasks = do
     "add" -> do
       putStrLn "Enter Task to Add:"
       newTask <- getLine
-      let updatedTasks = tasks ++ [newTask]
+      let updatedTasks = newTask : tasks
       taskManager updatedTasks
     "print" -> do
       putStrLn "Here are your tasks:"
